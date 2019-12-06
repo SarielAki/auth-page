@@ -23,6 +23,7 @@
     @import "../../variables"
 
     %header_text_and_link
+        +deselect
         cursor: pointer
         color: $header_text_color
         font-size: $header_font_size
@@ -50,7 +51,6 @@
     #navigation-wrapper
 
         .nav-item
-            +deselect
             position: relative
             display: flex
             flex-direction: row
