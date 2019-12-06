@@ -20,7 +20,7 @@
 </script>
 
 <style lang="sass" scoped>
-    @import "../../variables"
+    @import "../variables"
 
     %header_text_and_link
         +deselect
