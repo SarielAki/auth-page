@@ -1,12 +1,15 @@
 <template>
   <div id="app">
+    <top-bar></top-bar>
   </div>
 </template>
 
 <script>
 
+import TopBar from "@/components/main_page/TopBar";
 export default {
   name: 'app',
+  components: {TopBar},
 }
 </script>
 
