@@ -22,7 +22,7 @@
     @import "variables"
 
     html, body, #app
-        background: $main_light_color
+        background: #ffff
         position: relative
         display: block
         width: 100%
