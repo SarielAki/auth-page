@@ -26,6 +26,7 @@
         +deselect
         cursor: pointer
         color: $header_text_color
+        font-family: $default_font
         font-size: $header_font_size
 
     .top-bar-wrapper
@@ -61,20 +62,20 @@
             &, &:hover, &:active, &:focus
                 text-decoration: none
 
-            .nav-item__link
-                transition-duration: 0.2s
-            &:hover
-                color: $main_light_color
-
             .sign-in-text
                 padding: 5px 5px 5px 5px
                 margin-right: 10px
-                border: 1px solid $main_color
+                border: 1px solid $header_color
                 border-radius: 5px
                 background: $main_color
 
-            .sign-in-link
+                &:hover
+                    transition-duration: 0.4s
+                    border-color: #ffff
 
+            .sign-in-link
                 align-self: end
+
+
 
 </style>
