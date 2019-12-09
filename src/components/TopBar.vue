@@ -46,7 +46,7 @@
         width: 100%
         position: relative
         top: 0
-        background: $header_color
+        background: $main_dark_color
 
         .top-bar-logo
             @extend %header_text_and_link
@@ -69,7 +69,7 @@
 
             .sign-in-text
                 padding: 5px
-                border: 1px solid $header_color
+                border: 1px solid $main_dark_color
                 border-radius: 5px
                 background: $main_color
 
