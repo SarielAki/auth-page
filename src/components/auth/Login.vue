@@ -7,13 +7,19 @@
                     </span>
                     <div class="form-item form-item--login">
                         <label for="auth-login"></label>
-                        <input class="input" type="text" id="auth-login" placeholder="Login"/>
+                        <input class="input" type="text" id="auth-login" placeholder="Login"
+                               v-model="loginData.login"
+                        />
                     </div>
                     <div class="form-item form-item--password">
                         <label for="auth-password"></label>
-                        <input class="input" type="password" id="auth-password" placeholder="Password"/>
+                        <input class="input" type="password" id="auth-password" placeholder="Password"
+                               v-model="loginData.password"
+                        />
                     </div>
-                    <input class="input form-item form-item--button" value="Sign in" type="submit">
+                        <input class="auth--button" value="Sign in" type="submit"
+                               :disabled="!inputFilled"
+                        >
                 </form>
         </div>
     </div>
@@ -21,7 +27,21 @@
 
 <script>
     export default {
-        name: "AuthLogin"
+        name: "AuthLogin",
+        data() {
+            return {
+                loginData: {
+                    login: '',
+                    password: ''
+                }
+            }
+        },
+        computed: {
+            inputFilled: function () {
+                return !! this.loginData.password && this.loginData.login
+            }
+        }
+
     }
 </script>
 
@@ -38,41 +58,76 @@
         min-height: 300px
 
         .auth-body
+            user-select: none
             display: flex
             flex-direction: column
             font-family: $default_font
             justify-content: center
             align-items: center
             height: 300px
-            min-width: 400px
-            max-width: 600px
+            width: 400px
             border-radius: $form_border_radius
             background: $main_light_color
 
             .auth
                 display: block
+                width: 250px
+                height: 250px
 
                 .form-item
-                    margin-bottom: 10px
-                    width: 100%
                     display: block
                     position: relative
+                    width: 100%
+                    margin-bottom: 10px
+
+                    .input
+                        box-sizing: border-box
+                        display: block
+                        padding-left: 10px
+                        position: relative
+                        height: 40px
+                        width: 100%
+                        border-radius: $form_border_radius
+                        border: 2px solid $main_color
+
+                        &:focus
+                            border-color: $main_dark_color
+                            transition: all .5s ease
+
+                .auth--button
+                    font-size: 21px
+                    display: block
+                    position: relative
+                    width: 100%
+                    height: 40px
+                    margin-top: 20px
+                    border: none
+                    border-radius: $form_border_radius
+                    color: #000000
+                    background: $main_color
+
+                    &:hover
+                        background: $main_dark_color
+                        color: #ffffff
+                        transition: all .5s ease
+
+                    &, &:hover, &:active, &:focus
+                        outline: none
+                        text-decoration: none
+
+                    &:disabled
+                        color: black
+                        background: #e8e8e7
+
 
                 .form-item--head-text
+                    margin-bottom: 10px
                     font-size: 1.8em
                     text-align: center
 
-                .form-item--button
-                    margin-top: 20px
 
-                .input
-                    font-size: 1em
-                    padding: 10px
-                    border-radius: $form_border_radius
-                    border: 2px solid $main_color
-                    &:focus
-                        border-color: $main_dark_color
-                        transition: all .5s ease
+
+
 
 
 
