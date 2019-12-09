@@ -8,7 +8,7 @@
                 <router-link class="nav-item nav-item__link sign-in-link"
                              :to="'/login'"
                 >
-                        <span class="nav-item__text sign-in-text">Sign in</span>
+                    <span class="nav-item__text sign-in-text">Sign in</span>
                 </router-link>
             </nav>
         </div>
@@ -79,8 +79,6 @@
 
             &, &:hover, &:active, &:focus
                 text-decoration: none
-
-
 
 
 </style>
