@@ -3,7 +3,7 @@
         <div class="auth-body">
                 <form class="auth" name="auth">
                     <span class="form-item form-item--head-text">
-                        Sign in
+                        Login simple auth
                     </span>
                     <div class="form-item form-item--login">
                         <label for="auth-login"></label>
