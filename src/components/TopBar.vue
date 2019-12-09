@@ -5,9 +5,11 @@
                 Simple auth
             </div>
             <nav id="navigation-wrapper">
-                <a class="nav-item nav-item__link sign-in-link">
-                    <span class="nav-item__text sign-in-text">Sign in</span>
-                </a>
+                <router-link class="nav-item nav-item__link sign-in-link"
+                             :to="'/login'"
+                >
+                        <span class="nav-item__text sign-in-text">Sign in</span>
+                </router-link>
             </nav>
         </div>
     </div>
@@ -36,12 +38,12 @@
         justify-content: center
 
     .top-bar
+        +header_height_min_max
         display: flex
         flex-direction: row
         align-items: center
         justify-content: space-between
         width: 100%
-        height: $nav_height
         position: relative
         top: 0
         background: $header_color
@@ -50,21 +52,23 @@
             @extend %header_text_and_link
 
     #navigation-wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        width: 60%
+        height: 100%
 
         .nav-item
-            position: relative
-            display: flex
-            flex-direction: row
-            align-items: center
-            height: 100%
             @extend %header_text_and_link
 
-            &, &:hover, &:active, &:focus
-                text-decoration: none
+        .nav-item__link
+            align-self: end
+
+        .sign-in-link
+            margin-right: 10px
 
             .sign-in-text
                 padding: 5px 5px 5px 5px
-                margin-right: 10px
                 border: 1px solid $header_color
                 border-radius: 5px
                 background: $main_color
@@ -73,8 +77,9 @@
                     transition-duration: 0.4s
                     border-color: #ffff
 
-            .sign-in-link
-                align-self: end
+            &, &:hover, &:active, &:focus
+                text-decoration: none
+
 
 
 
