@@ -1,26 +1,26 @@
 <template>
     <div class="auth-wrapper">
         <div class="auth-body">
-                <form class="auth" name="auth">
+            <form class="auth" name="auth">
                     <span class="form-item form-item--head-text">
                         Login simple auth
                     </span>
-                    <div class="form-item form-item--login">
-                        <label for="auth-login"></label>
-                        <input class="input" type="text" id="auth-login" placeholder="Login"
-                               v-model="loginData.login"
-                        />
-                    </div>
-                    <div class="form-item form-item--password">
-                        <label for="auth-password"></label>
-                        <input class="input" type="password" id="auth-password" placeholder="Password"
-                               v-model="loginData.password"
-                        />
-                    </div>
-                        <input class="auth--button" value="Sign in" type="submit"
-                               :disabled="!inputFilled"
-                        >
-                </form>
+                <div class="form-item form-item--login">
+                    <label for="auth-login"></label>
+                    <input class="input" type="text" id="auth-login" placeholder="Login"
+                           v-model="loginData.login"
+                    />
+                </div>
+                <div class="form-item form-item--password">
+                    <label for="auth-password"></label>
+                    <input class="input" type="password" id="auth-password" placeholder="Password"
+                           v-model="loginData.password"
+                    />
+                </div>
+                <input class="auth--button" value="Sign in" type="submit"
+                       :disabled="!inputFilled"
+                >
+            </form>
         </div>
     </div>
 </template>
@@ -38,7 +38,7 @@
         },
         computed: {
             inputFilled: function () {
-                return !! this.loginData.password && this.loginData.login
+                return !!this.loginData.password && this.loginData.login
             }
         }
 
@@ -124,11 +124,6 @@
                     margin-bottom: 10px
                     font-size: 1.8em
                     text-align: center
-
-
-
-
-
 
 
 </style>
