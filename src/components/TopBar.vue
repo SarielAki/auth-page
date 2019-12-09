@@ -68,7 +68,7 @@
             margin-right: 10px
 
             .sign-in-text
-                padding: 5px 5px 5px 5px
+                padding: 5px
                 border: 1px solid $header_color
                 border-radius: 5px
                 background: $main_color
