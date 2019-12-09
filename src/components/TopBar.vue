@@ -78,6 +78,7 @@
                     border-color: #ffff
 
             &, &:hover, &:active, &:focus
+                outline: none
                 text-decoration: none
 
 
