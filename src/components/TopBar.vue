@@ -6,7 +6,7 @@
             </div>
             <nav id="navigation-wrapper">
                 <a class="nav-item nav-item__link sign-in-link">
-                    <span class="nav-item__text">Sign in</span>
+                    <span class="nav-item__text sign-in-text">Sign in</span>
                 </a>
             </nav>
         </div>
@@ -66,7 +66,15 @@
             &:hover
                 color: $main_light_color
 
+            .sign-in-text
+                padding: 5px 5px 5px 5px
+                margin-right: 10px
+                border: 1px solid $main_color
+                border-radius: 5px
+                background: $main_color
+
             .sign-in-link
+
                 align-self: end
 
 </style>
