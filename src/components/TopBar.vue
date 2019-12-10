@@ -58,33 +58,33 @@
 
     #navigation-wrapper
         display: flex
-        flex-direction: column
-        justify-content: center
+        flex-direction: row
+        align-items: center
+        justify-content: flex-end
         width: 60%
         height: 100%
 
         .nav-item
             @extend %header_text_and_link
-
-        .nav-item__link
-            align-self: end
-
-        .sign-in-link
             margin-right: 10px
 
-            .sign-in-text
-                padding: 5px
-                border: 1px solid $main_dark_color
-                border-radius: 5px
-                background: $main_color
+        .nav-item__link
+            text-decoration: none
+            outline: none
 
-                &:hover
-                    transition-duration: 0.4s
-                    border-color: #ffff
+        .nav-item__text
+            padding: 5px
+            border: 1px solid $main_dark_color
+            border-radius: 5px
+            background: $main_color
 
-            &, &:hover, &:active, &:focus
-                outline: none
-                text-decoration: none
+            &:hover
+                transition-duration: 0.4s
+                border-color: #ffff
+
+        &, &:hover, &:active, &:focus
+            outline: none
+            text-decoration: none
 
 
 </style>
