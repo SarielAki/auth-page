@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <top-bar></top-bar>
-        <transition name="fade" appear>
+        <transition name="fade">
             <router-view class="page-content"></router-view>
         </transition>
     </div>
@@ -21,6 +21,12 @@
     @import "~normalize.css"
     @import "variables"
 
+    %appear_leave_animation_active
+        transition: opacity .5s
+
+    %appear_leave_animation
+        opacity: 0
+
     html, body, #app
         background: #ffff
         position: relative
@@ -36,8 +42,14 @@
         justify-content: center
 
     .fade-enter-active
-        transition: opacity .5s
+        @extend %appear_leave_animation_active
 
     .fade-enter
-        opacity: 0
+        @extend %appear_leave_animation
+
+    .fade-leave-active
+        @extend %appear_leave_animation_active
+
+    .fade-leave
+        @extend %appear_leave_animation
 </style>
