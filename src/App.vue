@@ -22,7 +22,7 @@
     @import "variables"
 
     %appear_leave_animation_active
-        transition: opacity .5s
+        transition: opacity .7s
 
     %appear_leave_animation
         opacity: 0
