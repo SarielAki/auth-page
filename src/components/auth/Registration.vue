@@ -54,6 +54,6 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="sass" scoped>
+    @import "../../auth_style"
 </style>
