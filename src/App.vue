@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <top-bar></top-bar>
-        <transition name="fade" mode="out-in" appear>
+        <transition name="fade" appear>
             <router-view class="page-content"></router-view>
         </transition>
     </div>
@@ -34,4 +34,10 @@
         display: flex
         flex-direction: row
         justify-content: center
+
+    .fade-enter-active
+        transition: opacity .5s
+
+    .fade-enter
+        opacity: 0
 </style>
