@@ -23,9 +23,14 @@
                            v-model="regData.password_repeat"
                     />
                 </div>
-                <input class="auth--button" value="Sign up" type="submit"
+                <input class="auth-button" value="Sign up" type="submit"
                        :disabled="!isValid"
                 >
+                <router-link class="form-item form-item--bottom-link"
+                             :to="'/login'"
+                >
+                    <span class="form-item form-item--bottom-text">To login</span>
+                </router-link>
             </form>
         </div>
     </div>

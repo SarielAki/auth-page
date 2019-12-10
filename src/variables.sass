@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap')
 
 $main_dark_color: #7e57c2
+$main_dark_purple: #4d2c91
 $main_color: #b39ddb
 $main_light_color: #e6ceff
 $header_text_color: #ffff
@@ -19,3 +20,8 @@ $form_border_radius: 7px
   min-height: $header_height
   max-height: $header_height
   height: $header_height
+
+=link_fix
+  &, &:hover, &:active, &:focus
+    outline: none
+    text-decoration: none

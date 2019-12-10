@@ -1,6 +1,5 @@
 @import "variables"
 
-
 .auth-wrapper
   display: flex
   flex-direction: column
@@ -17,7 +16,7 @@
     font-family: $default_font
     justify-content: center
     align-items: center
-    height: 300px
+    height: 315px
     width: 400px
     border-radius: $form_border_radius
     background: $main_light_color
@@ -44,10 +43,11 @@
           border: 2px solid $main_color
 
           &:focus
+            outline: none
             border-color: $main_dark_color
             transition: all .5s ease
 
-      .auth--button
+      .auth-button
         font-size: 21px
         display: block
         position: relative
@@ -64,9 +64,7 @@
           color: #ffffff
           transition: all .5s ease
 
-        &, &:hover, &:active, &:focus
-          outline: none
-          text-decoration: none
+        +link_fix
 
         &:disabled
           color: black
@@ -77,3 +75,12 @@
         margin-bottom: 10px
         font-size: 1.8em
         text-align: center
+
+      .form-item--bottom-link
+        margin-top: 10px
+        color: $main_dark_purple
+        cursor: pointer
+        +link_fix
+        &:hover
+          color: $main_dark_color
+

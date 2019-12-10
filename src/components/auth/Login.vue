@@ -17,9 +17,14 @@
                            v-model="loginData.password"
                     />
                 </div>
-                <input class="auth--button" value="Sign in" type="submit"
+                <input class="auth-button" value="Sign in" type="submit"
                        :disabled="!inputFilled"
                 >
+                <router-link class="form-item form-item--bottom-link"
+                        :to="'/registration'"
+                >
+                    <span class="form-item form-item--bottom-text">To registration</span>
+                </router-link>
             </form>
         </div>
     </div>
