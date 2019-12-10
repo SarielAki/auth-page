@@ -10,6 +10,11 @@
                 >
                     <span class="nav-item__text sign-in-text">Sign in</span>
                 </router-link>
+                <router-link class="nav-item nav-item__link sign-up-link"
+                             :to="'/registration'"
+                >
+                    <span class="nav-item__text sign-up-text">Sign up</span>
+                </router-link>
             </nav>
         </div>
     </div>
