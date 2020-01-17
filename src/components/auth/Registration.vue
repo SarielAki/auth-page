@@ -6,19 +6,19 @@
                         Registration
                     </span>
                 <div class="form-item form-item--login">
-                    <label for="auth-login"></label>
+                    <label for="auth-login"/>
                     <input class="input" type="text" id="auth-login" placeholder="Login"
                            v-model="regData.login"
                     />
                 </div>
                 <div class="form-item form-item--password">
-                    <label for="auth-password"></label>
+                    <label for="auth-password"/>
                     <input class="input" type="password" id="auth-password" placeholder="Password"
                            v-model="regData.password"
                     />
                 </div>
                 <div class="form-item form-item--password-repeat">
-                    <label for="auth-password-repeat"></label>
+                    <label for="auth-password-repeat"/>
                     <input class="input" type="password" id="auth-password-repeat" placeholder="Repeat password"
                            v-model="regData.password_repeat"
                     />

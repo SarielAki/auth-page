@@ -6,13 +6,13 @@
                         Login simple auth
                     </span>
                 <div class="form-item form-item--login">
-                    <label for="auth-login"></label>
+                    <label for="auth-login"/>
                     <input class="input" type="text" id="auth-login" placeholder="Login"
                            v-model="loginData.login"
                     />
                 </div>
                 <div class="form-item form-item--password">
-                    <label for="auth-password"></label>
+                    <label for="auth-password"/>
                     <input class="input" type="password" id="auth-password" placeholder="Password"
                            v-model="loginData.password"
                     />

@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import AuthLogin from "@/components/auth/Login"
 import AuthReg from "@/components/auth/Registration"
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
     {path: '/'},
@@ -18,11 +18,11 @@ const routes = [
         component: AuthReg
     }
 
-]
+];
 
 const router = new VueRouter({
     routes,
     mode: 'history'
-})
+});
 
 export default router

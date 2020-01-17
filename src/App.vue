@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <top-bar></top-bar>
+        <top-bar/>
         <transition name="fade">
-            <router-view class="page-content"></router-view>
+            <router-view class="page-content"/>
         </transition>
     </div>
 </template>
