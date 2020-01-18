@@ -1,9 +1,7 @@
 <template>
     <div id="app">
         <top-bar/>
-        <transition name="fade">
             <router-view class="page-content"/>
-        </transition>
     </div>
 </template>
 
