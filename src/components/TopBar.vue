@@ -1,16 +1,26 @@
 <template>
     <div class="top-bar-wrapper">
         <div class="top-bar">
-            <div class="top-bar-logo">
-                Simple auth
-            </div>
+            <router-link class="top-bar-logo"
+                 :to="'/'"
+            >
+                Auth
+            </router-link>
             <nav id="navigation-wrapper">
+                <div class="nav-item nav-item__link logout-link"
+                     v-if="$store.getters['authStore/isAuthorized']"
+                     @click="logout"
+                >
+                    <span class="nav-item__text sign-in-text">Logout</span>
+                </div>
                 <router-link class="nav-item nav-item__link sign-in-link"
+                             v-if="!$store.getters['authStore/isAuthorized']"
                              :to="'/login'"
                 >
                     <span class="nav-item__text sign-in-text">Sign in</span>
                 </router-link>
                 <router-link class="nav-item nav-item__link sign-up-link"
+                             v-if="!$store.getters['authStore/isAuthorized']"
                              :to="'/registration'"
                 >
                     <span class="nav-item__text sign-up-text">Sign up</span>
@@ -22,7 +32,12 @@
 
 <script>
     export default {
-        name: "TopBar"
+        name: "TopBar",
+        methods: {
+            logout: function () {
+                this.$store.dispatch('authStore/logout')
+            }
+        }
     }
 </script>
 
@@ -31,6 +46,8 @@
 
     %header_text_and_link
         +deselect
+        text-decoration: none
+        outline: none
         cursor: pointer
         color: $header_text_color
         font-family: $default_font
@@ -54,6 +71,7 @@
         background: $main_dark_color
 
         .top-bar-logo
+            margin-left: 5px
             @extend %header_text_and_link
 
     #navigation-wrapper

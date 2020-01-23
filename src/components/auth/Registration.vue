@@ -1,7 +1,10 @@
 <template>
     <div class="auth-wrapper">
         <div class="auth-body">
-            <form class="auth" name="auth">
+            <form class="auth" name="auth"
+                  @submit.prevent
+                  @keyup.enter="registration"
+            >
                     <span class="form-item form-item--head-text">
                         Registration
                     </span>
@@ -24,6 +27,7 @@
                     />
                 </div>
                 <input class="auth-button" value="Sign up" type="submit"
+                       @mousedown="registration"
                        :disabled="!isValid"
                 >
                 <router-link class="form-item form-item--bottom-link"
@@ -54,6 +58,14 @@
             },
             isValid: function () {
                 return !!(this.passwordMatch && this.regData.password && this.regData.login)
+            }
+        },
+        methods: {
+            registration: function () {
+                this.$store.dispatch('authStore/registration', {
+                    username: this.regData.login,
+                    password: this.regData.password
+                })
             }
         }
     }

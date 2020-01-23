@@ -11,7 +11,27 @@
 
     export default {
         name: 'app',
+        data() {
+            return {
+                authorized: false,
+                sub: undefined
+            }
+        },
         components: {TopBar},
+        beforeMount: function () {
+            this.authorized = window.localStorage.getItem('authorized');
+            this.sub = window.localStorage.getItem('subject');
+            this.$store.dispatch('authStore/CheckAuthorize').then(
+                //eslint-disable-next-line
+                result => {
+
+                },
+                error => {
+                    // eslint-disable-next-line no-console
+                    console.error(error, 'Unauthorized')
+                }
+            )
+        }
     }
 </script>
 

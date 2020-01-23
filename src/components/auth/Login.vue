@@ -1,14 +1,17 @@
 <template>
     <div class="auth-wrapper">
         <div class="auth-body">
-            <form class="auth" name="auth">
+            <form class="auth" name="auth"
+                  @submit.prevent
+                  @keyup.enter="login"
+            >
                     <span class="form-item form-item--head-text">
-                        Login simple auth
+                        Login
                     </span>
                 <div class="form-item form-item--login">
                     <label for="auth-login"/>
                     <input class="input" type="text" id="auth-login" placeholder="Login"
-                           v-model="loginData.login"
+                           v-model="loginData.username"
                     />
                 </div>
                 <div class="form-item form-item--password">
@@ -18,6 +21,7 @@
                     />
                 </div>
                 <input class="auth-button" value="Sign in" type="submit"
+                       @mousedown="login"
                        :disabled="!inputFilled"
                 >
                 <router-link class="form-item form-item--bottom-link"
@@ -36,14 +40,19 @@
         data() {
             return {
                 loginData: {
-                    login: '',
+                    username: '',
                     password: ''
                 }
             }
         },
         computed: {
             inputFilled: function () {
-                return !!this.loginData.password && this.loginData.login
+                return !!this.loginData.password && this.loginData.username
+            }
+        },
+        methods: {
+            login: function () {
+                this.$store.dispatch('authStore/login', this.loginData)
             }
         }
 
