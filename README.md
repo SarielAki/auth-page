@@ -1,4 +1,4 @@
-# simple-auth
+# auth-page
 
 ## Project setup
 ```
